@@ -34,6 +34,8 @@ import com.axelor.apps.rossum.service.schema.SchemaFieldService;
 import com.axelor.apps.rossum.service.schema.SchemaFieldServiceImpl;
 import com.axelor.apps.rossum.service.schema.SchemaService;
 import com.axelor.apps.rossum.service.schema.SchemaServiceImpl;
+import com.axelor.apps.rossum.service.template.binding.TemplateBindingService;
+import com.axelor.apps.rossum.service.template.binding.TemplateBindingServiceImpl;
 import com.axelor.apps.rossum.service.workspace.WorkspaceService;
 import com.axelor.apps.rossum.service.workspace.WorkspaceServiceImpl;
 
@@ -50,5 +52,6 @@ public class RossumModule extends AxelorModule {
     bind(SchemaFieldService.class).to(SchemaFieldServiceImpl.class);
     bind(AnnotationService.class).to(AnnotationServiceImpl.class);
     bind(InvoiceOcrTemplateRepository.class).to(InvoiceOcrTemplateManagementRepository.class);
+    bind(TemplateBindingService.class).to(TemplateBindingServiceImpl.class);
   }
 }

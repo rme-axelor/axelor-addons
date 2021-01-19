@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+   <grid model="com.axelor.apps.rossum.db.TemplateBinding" title="Template bindings" name="template-binding-grid">
+      <field name="name"/>
+      <field name="schemaUrl"/>
+   </grid>
+   
+   <form model="com.axelor.apps.rossum.db.TemplateBinding" title="Template binding" name="template-binding-form" width="large">
+      <panel name="mainPanel">
+         <field name="name" required="true"/>
+         <field name="schemaUrl" required="true" onChange="action-template-binding-method-schema-url-onchange"/>
+      </panel>
+      <panel-related field="templateBindingLineList" canNew="false" canRemove="false" form-view="template-binding-line-form"
+         grid-view="template-binding-line-grid" showIf="schemaUrl" editable="true"/>
+   </form>
+
+   <action-method name="action-template-binding-method-schema-url-onchange">
+      <call class="com.axelor.apps.rossum.web.TemplateBindingController" method="updateTemplateBindingList"/>
+   </action-method>
+
+</object-views>

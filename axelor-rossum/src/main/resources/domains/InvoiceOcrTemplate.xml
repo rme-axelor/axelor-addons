@@ -38,10 +38,12 @@
 
       <many-to-one name="queue" ref="com.axelor.apps.rossum.db.Queue" title="Queue"/>
       <many-to-one name="exportedFile" ref="com.axelor.meta.db.MetaFile" title="CSV file"/>
+      <many-to-one name="templateBinding" ref="com.axelor.apps.rossum.db.TemplateBinding" title="Template binding"/>
 
       <boolean name="isInvoiceLineConsolidated" title="Consolidate invoice lines"/>
       <boolean name="isValidated" title="Validated"/>
       <boolean name="isCorrected" title="Corrected"/>
+      <boolean name="isDynamicBinding" title="Dynamic binding"/>
 
       <extra-code>
          <![CDATA[

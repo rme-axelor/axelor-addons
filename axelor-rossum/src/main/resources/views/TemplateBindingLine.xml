@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+   <grid model="com.axelor.apps.rossum.db.TemplateBindingLine" title="Template binding lines" name="template-binding-line-grid"
+      editable="true">
+      <field name="labelField"/>
+      <field name="rossumField"/>
+      <field name="metaField" domain="self.metaModel.fullName = :metaFieldSelection"/>
+      <field name="targetMetaField" type="many-to-one" readonlyIf="metaField.relationship == null" target="com.axelor.meta.db.MetaField"
+         title="Target meta field"/>
+      <field name="metaFieldSelection" hidden="true"/>
+      <field name="metaField.relationship" hidden="true"/>
+      <button onClick="action-template-binding-line-record-clear-selection-onclick" title="Clear selection" name="clearSelectionBtn"
+         icon="fa-arrow-left"/>
+   </grid>
+
+   <form model="com.axelor.apps.rossum.db.TemplateBindingLine" title="Template binding line" name="template-binding-line-form">
+      <panel name="mainPanel">
+         <field name="labelField"/>
+         <field name="rossumField"/>
+         <field name="metaField" domain="self.metaModel.fullName = :metaFieldSelection"/>
+         <field name="targetMetaField" type="many-to-one" readonlyIf="metaField.relationship == null" target="com.axelor.meta.db.MetaField"
+            title="Target meta field"/>
+         <field name="metaFieldSelection"/>
+         <field name="metaField.relationship" hidden="true"/>
+         <button onClick="action-template-binding-line-record-clear-selection-onclick" title="Clear selection" name="clearSelectionBtn"
+            icon="fa-arrow-left"/>
+      </panel>
+   </form>
+
+   <action-record name="action-template-binding-line-record-clear-selection-onclick" model="com.axelor.apps.rossum.db.TemplateBindingLine">
+      <field name="metaField" expr="eval: null"/>
+   </action-record>
+
+</object-views>

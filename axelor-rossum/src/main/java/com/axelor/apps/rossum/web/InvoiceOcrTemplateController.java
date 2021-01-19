@@ -64,9 +64,8 @@ public class InvoiceOcrTemplateController {
         Beans.get(InvoiceOcrTemplateManagementRepository.class)
             .find(request.getContext().asType(InvoiceOcrTemplate.class).getId());
 
-    Invoice invoice;
     try {
-      invoice =
+      Invoice invoice =
           Beans.get(InvoiceOcrTemplateService.class).generateInvoiceFromCSV(invoiceOcrTemplate);
       if (invoice != null) {
         response.setView(

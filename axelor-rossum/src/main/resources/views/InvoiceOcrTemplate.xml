@@ -219,6 +219,13 @@
 
          <button name="recogniseBtn" title="Recognise" onClick="save,action-invoice-ocr-template-method-onclick-recognise-data"
             showIf="exportedFile != null &amp;&amp; isValidated &amp;&amp; invoice == null"/>
+         <field name="isDynamicBinding" widget="boolean-switch"/>
+         <field name="$manualBindingWarning" readonly="true" showIf="!isDynamicBinding" showTitle="false">
+            <viewer><![CDATA[
+               <span x-translate>Watch out, that schema selected in queue has 'description', 'quantity' and 'unit price without vat' enabled in lines to generate invoice lines.</span>
+            ]]></viewer>
+         </field>
+         <field name="templateBinding" showIf="isDynamicBinding" requiredIf="isDynamicBinding"/>
          <button name="generateInvoice" title="Generate Invoice"
             showIf="exportedFile != null &amp;&amp; isValidated &amp;&amp; invoice == null"
             onClick="action-invoice-ocr-template-group-onclick-generate-invoice"/>
