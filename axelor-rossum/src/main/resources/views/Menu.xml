@@ -44,4 +44,11 @@
       <view type="form" name="annotation-form"/>
       <view-param name="limit" value="100"/>
    </action-view>
+   
+   <menuitem title="Template bindings" name="rossum-root-config-template-binding" parent="rossum-root-config"
+      action="rossum.root.config.template.binding"/>
+   <action-view name="rossum.root.config.template.binding" title="Template bindings" model="com.axelor.apps.rossum.db.TemplateBinding">
+      <view type="grid" name="template-binding-grid"/>
+      <view type="form" name="template-binding-form"/>
+   </action-view>
 </object-views>

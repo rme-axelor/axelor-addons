@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+   <grid model="com.axelor.apps.rossum.db.TemplateBindingLine" title="Template binding lines" name="template-binding-line-grid"
+      editable="true">
+      <field name="labelField"/>
+      <field name="rossumField"/>
+      <field name="metaField" onSelect="action-template-binding-line-attrs-meta-field-onselect"/>
+      <field name="targetMetaField" type="many-to-one" showIf="metaField.relationship != null" target="com.axelor.meta.db.MetaField"/>
+      <field name="metaFieldSelection"/>
+      <button onClick="action-template-binding-line-record-clear-selection-onclick" title="Clear selection" name="clearSelectionBtn"/>
+   </grid>
+
+   <form model="com.axelor.apps.rossum.db.TemplateBindingLine" title="Template binding line" name="template-binding-line-form">
+      <panel name="mainPanel">
+         <field name="labelField"/>
+         <field name="rossumField"/>
+         <field name="metaField" onSelect="action-template-binding-line-attrs-meta-field-onselect"/>
+         <field name="targetMetaField" type="many-to-one" showIf="metaField.relationship != null" target="com.axelor.meta.db.MetaField"/>
+         <field name="metaFieldSelection"/>
+         <button onClick="action-template-binding-line-record-clear-selection-onclick" title="Clear selection" name="clearSelectionBtn"/>
+      </panel>
+   </form>
+
+</object-views>
