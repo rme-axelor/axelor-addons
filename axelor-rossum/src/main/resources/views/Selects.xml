@@ -34,4 +34,6 @@
       <option value="invoiceOcrTemplate">Invoice ocr template</option>
    </selection>
 
+   <selection name="rossum.template.binding.model.select"></selection>
+
 </object-views>

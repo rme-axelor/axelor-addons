@@ -7,7 +7,7 @@
   
    <entity name="TemplateBinding">
       <string name="name"/>
-      <many-to-one name="schemaUrl" ref="com.axelor.apps.rossum.db.Schema" title="Schema"/>
+      <string name="sourceModel"/>
       <one-to-many name="templateBindingLineList" ref="com.axelor.apps.rossum.db.TemplateBindingLine" mappedBy="templateBinding"/>
    </entity>
 

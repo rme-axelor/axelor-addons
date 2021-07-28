@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.3.xsd">
+
+   <module package="com.axelor.apps.rossum.db" name="rossum"/>
+  
+   <entity name="InvoiceOcrTemplateLine">
+      <many-to-one name="invoiceOcrTemplate" ref="com.axelor.apps.rossum.db.InvoiceOcrTemplate" title="Invoice ocr template"/>
+
+      <decimal name="qty" title="Qty"/>
+
+      <decimal name="totalWithoutTax" title="Total without tax"/>
+      <decimal name="totalTax" title="Total tax"/>
+      <decimal name="totalAmount" title="Total amount"/>
+   </entity>
+</domain-models>
